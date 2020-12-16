@@ -1,0 +1,14 @@
+#pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .pagination {
+        margin-bottom: 0px;
+    }
+}
+
+.img-fit-cover {
+    -o-object-fit: cover;
+    object-fit: cover;
+}

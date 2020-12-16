@@ -1,0 +1,166 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background-size: contain;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0;
+}
+
+header {
+  height: 220px;
+  background-image: url(../images/header.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-image: url(../images/main.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+main .input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 1090px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+main .input-group .form-control {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #100d81;
+  padding: .175rem .75rem;
+  background-color: transparent;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: 4px solid #fab12d;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  text-align: center;
+}
+
+main .input-group .form-control::-webkit-outer-spin-button, main .input-group .form-control::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+main .input-group .main-input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 0 80px;
+}
+
+main .input-group .main-input .prize {
+  width: 100%;
+}
+
+main .input-group .main-input .form-control {
+  width: 100%;
+  border: 5px solid #fab12d;
+  border-radius: 15px;
+  font-size: 2rem;
+  background-color: #e1dfe1;
+}
+
+main .input-group .group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 180px;
+  margin-top: 50px;
+  padding-top: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 40px;
+}
+
+main .input-group .group:nth-child(1) {
+  background-image: url(../images/border-left.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+main .input-group .group:nth-child(3) {
+  background-image: url(../images/border-right.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+main .input-group .group .form-control {
+  margin-bottom: 3px;
+}
+
+footer {
+  height: 254px;
+  background-image: url(../images/footer.png);
+  background-size: cover;
+  background-position: bottom;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .btn {
+  width: 150px;
+  height: 63px;
+  margin-top: 142px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  font-size: 0;
+}
+
+footer .btn:nth-child(1) {
+  margin-right: 113px;
+  background-image: url(../images/btn-start.png);
+  background-size: cover;
+  background-position: center;
+}
+
+footer .btn:nth-child(2) {
+  background-image: url(../images/btn-stop.png);
+  background-size: cover;
+  background-position: center;
+}
+/*# sourceMappingURL=style.css.map */
