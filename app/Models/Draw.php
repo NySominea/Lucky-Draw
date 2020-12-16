@@ -32,7 +32,7 @@ class Draw extends BaseModel
         $now = Carbon::now();
         $lastSegment = '0001';
 
-        $latestDraw = Draw::orderBy('round_number', 'desc')->first();
+        $latestDraw = Draw::withTrashed()->orderBy('round_number', 'desc')->first();
         if ($latestDraw) {
             $lastDrawYear = substr($latestDraw->round_number, 0, 4);
             if ($now->year == $lastDrawYear) {

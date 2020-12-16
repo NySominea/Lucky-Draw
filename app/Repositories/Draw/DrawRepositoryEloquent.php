@@ -44,8 +44,8 @@ class DrawRepositoryEloquent extends BaseRepository implements DrawRepository
                         ? parent::update($attributes, $id)
                         : parent::create($attributes);
 
-        if ($model) {
-                $model->saveSingleMedia($thumbnail, 'prize', $model->random_number);
+            if ($model) {
+                $model->saveSingleMedia($thumbnail, 'prize', $model->round_number);
             }
 
             $ids = [];
