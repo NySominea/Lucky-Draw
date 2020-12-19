@@ -14,12 +14,14 @@ class PhonesImport implements ToCollection, WithStartRow, WithMultipleSheets
     {
         foreach ($rows as $row)
         {
-            Phone::firstOrCreate([
-                'value_unformatted' => Phone::Unformatted($row[0]),
-            ],[
-                'value' => $row[0],
-                'value_unformatted' => Phone::Unformatted($row[0]),
-            ]);
+            if ($row[0]) {
+                Phone::firstOrCreate([
+                    'value_unformatted' => Phone::Unformatted($row[0]),
+                ],[
+                    'value' => $row[0],
+                    'value_unformatted' => Phone::Unformatted($row[0]),
+                ]);
+            }
         }
     }
 
