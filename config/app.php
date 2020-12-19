@@ -166,6 +166,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Maatwebsite\Excel\ExcelServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Spatie\EloquentSortable\EloquentSortableServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
@@ -231,6 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'JsValidator' => Proengsoft\JsValidation\Facades\JsValidatorFacade::class,
 
         'Status' => App\Enums\Status::class,

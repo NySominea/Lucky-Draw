@@ -63,4 +63,9 @@ class PhoneController extends Controller
 
         return $this->redirectBackWithErrors();
     }
+
+     public function import(Request $request) {
+        $response = $this->repository->import($request->file('files'));
+        return response()->json($response);
+    }
 }

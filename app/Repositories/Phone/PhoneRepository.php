@@ -12,4 +12,6 @@ use Prettus\Repository\Contracts\RepositoryInterface;
 interface PhoneRepository extends RepositoryInterface
 {
     public function createOrUpdate(array $data, $id);
+
+    public function import(array $files);
 }

@@ -26,7 +26,13 @@
     <div class="col-md-5 col-lg-4">
         <div class="card">
             <div class="card-header font-weight-bold">
-                {{ isset($phone) ? __('Edit Phone') : 'Add New Phone' }}
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>{{ isset($phone) ? __('Edit Phone') : 'Add New Phone' }}</div>
+                    <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#import-modal">
+                        <i class="fa fa-file-excel"></i>
+                    </button>
+                </div>
+
             </div>
             <div class="card-body">
                 @if(isset($phone))
@@ -135,10 +141,44 @@
     </div>
 </div>
 
+<div class="modal fade" id="import-modal" tabindex="-1" role="dialog" aria-labelledby="importModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="importModalLabel">Import Phones</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="form" method="POST" action="{{ route('phones.import') }}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group">
+                        <label for="file">
+                            @lang('Excel file') <span class="text-danger">*</span>
+                            (<small for="file">Get sample file <a href="{{ asset('lucky-draw/files/phone.xlsx') }}" download>here</a></small>)
+                        </label>
+                        <input type="file" name="file" class="form-control-file" id="file" accept=".xlsx,.xls" multiple>
+                    </div>
+                </form>
+                <div class="text-center mt-2 mb-2" id="message"></div>
+                <div id="loading-indicator" class="loading-indicator text-center d-none">
+                    <div class="spinner-border text-success" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-close" type="button" class="btn btn-secondary" data-dismiss="modal">@lang('Cancel')</button>
+                <button id="btn-submit" type="button" class="btn btn-primary" form="file-form">Import</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 
 
 @push('js')
+    <script src="{{ asset('admin/js/custom/import.js') }}"></script>
     <script type="text/javascript" src="{{ url('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
     @if (isset($phone))
         {!! JsValidator::formRequest('App\Http\Requests\Phone\UpdateRequest', '#phone-form') !!}

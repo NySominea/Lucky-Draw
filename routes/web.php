@@ -31,6 +31,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('prizes/update-order', 'PrizeController@updateOrder')->name('prizes.update-order');
     Route::resource('prizes', 'PrizeController');
+
+    Route::post('phones/import', 'PhoneController@import')->name('phones.import');
     Route::resource('phones', 'PhoneController');
 
     /**

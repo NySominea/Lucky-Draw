@@ -5,10 +5,12 @@
 <!-- Plugins js-->
 <script src="{{ asset('admin/libs/bootstrap-select/js/bootstrap-select.min.js') }}"></script>
 <script src="{{ asset('admin/libs/apexcharts/apexcharts.min.js') }}"></script>
+<script src="{{ asset('admin/libs/sweetalert2/sweetalert2.min.js') }}"></script>
 
 <!-- App js-->
 <script src="{{ asset('admin/js/app.min.js') }}"></script>
 
 <!-- Custom js-->
+<script src="{{ asset('admin/js/custom/delete.handler.js') }}"></script>
 <script src="{{ asset('admin/js/custom/general.js') }}"></script>
 @stack('js')
